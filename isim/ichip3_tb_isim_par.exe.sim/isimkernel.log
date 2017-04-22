@@ -1,0 +1,28 @@
+Command line:
+   ichip3_tb_isim_par.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  64149
+
+Sun Apr 09 16:35:05 2017
+
+
+ Elaboration Time: 0.140625 sec
+
+ Current Memory Usage: 854.348 Meg
+
+ Total Signals          : 2369
+ Total Nets             : 1496
+ Total Signal Drivers   : 1493
+ Total Blocks           : 320
+ Total Primitive Blocks : 238
+ Total Processes        : 2088
+ Total Traceable Variables  : 793
+ Total Scalar Nets and Variables : 26816
+
+ Total Simulation Time: 3.45313 sec
+
+ Current Memory Usage: 382.464 Meg
+
+Sun Apr 09 16:51:06 2017
+

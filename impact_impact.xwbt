@@ -1,0 +1,8 @@
+INTSTYLE=impact
+INFILE=E:\spi2\impact.xsl
+OUTFILE=E:\spi2\impact.xsl
+FAMILY=Single
+PART=Single
+WORKINGDIR=E:\spi2
+LICENSE=iMPACT
+USER_INFO=iMPACT

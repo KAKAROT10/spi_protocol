@@ -1,0 +1,37 @@
+#-----------------------------------------------------------
+# PlanAhead v14.7 (64-bit)
+# Build 321239 by xbuild on Fri Sep 27 19:29:51 MDT 2013
+# Start of session at: Fri Apr 07 23:06:43 2017
+# Process ID: 656
+# Log file: E:/spi2/planAhead_run_2/planAhead.log
+# Journal file: E:/spi2/planAhead_run_2/planAhead.jou
+#-----------------------------------------------------------
+start_gui
+source E:/spi2/pa.fromNetlist.tcl
+set_property iostandard LVCMOS33 [get_ports [list done]]
+set_property iostandard LVCMOS33 [get_ports [list miso]]
+set_property iostandard LVCMOS33 [get_ports [list enable]]
+set_property iostandard LVCMOS33 [get_ports [list mosi]]
+set_property iostandard LVCMOS33 [get_ports [list rawclk]]
+set_property iostandard LVCMOS33 [get_ports [list sck]]
+set_property package_pin "" [get_ports [list  done]]
+startgroup
+set_property package_pin E3 [get_ports rawclk]
+endgroup
+set_property package_pin "" [get_ports [list  miso]]
+startgroup
+set_property package_pin B13 [get_ports enable]
+endgroup
+startgroup
+set_property package_pin F14 [get_ports miso]
+endgroup
+startgroup
+set_property package_pin D17 [get_ports mosi]
+endgroup
+startgroup
+set_property package_pin E17 [get_ports sck]
+endgroup
+startgroup
+set_property package_pin G13 [get_ports done]
+endgroup
+save_constraints

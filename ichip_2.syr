@@ -1,0 +1,586 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.16 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.16 secs
+ 
+--> Reading design: ichip_2.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "ichip_2.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "ichip_2"
+Output Format                      : NGC
+Target Device                      : xc7a100t-1-csg324
+
+---- Source Options
+Top Module Name                    : ichip_2
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 32
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "E:\spi3\ShiftReg.v" into library work
+Parsing module <ShiftReg>.
+Analyzing Verilog file "E:\spi3\register.v" into library work
+Parsing module <register>.
+Analyzing Verilog file "E:\spi3\ram_flip.v" into library work
+Parsing module <ram_flip>.
+Analyzing Verilog file "E:\spi3\dflipflop.v" into library work
+Parsing module <dflipflop>.
+Analyzing Verilog file "E:\spi3\Counter.v" into library work
+Parsing module <Counter>.
+Analyzing Verilog file "E:\spi3\bit8_mux_2x1.v" into library work
+Parsing module <bit8_mux_2x1>.
+Analyzing Verilog file "E:\spi3\ichip_2_3.v" into library work
+Parsing module <ichip_2>.
+WARNING:HDLCompiler:751 - "E:\spi3\ichip_2_3.v" Line 39: Redeclaration of ansi port clk is not allowed
+WARNING:HDLCompiler:751 - "E:\spi3\ichip_2_3.v" Line 40: Redeclaration of ansi port dd is not allowed
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating module <ichip_2>.
+
+Elaborating module <Counter>.
+
+Elaborating module <ShiftReg>.
+
+Elaborating module <ram_flip>.
+
+Elaborating module <dflipflop>.
+
+Elaborating module <bit8_mux_2x1>.
+
+Elaborating module <register>.
+WARNING:HDLCompiler:189 - "E:\spi3\ichip_2_3.v" Line 48: Size mismatch in connection of port <a>. Formal port size is 8-bit while actual signal size is 5-bit.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <ichip_2>.
+    Related source file is "E:\spi3\ichip_2_3.v".
+    Found 1-bit register for signal <command>.
+    Found 2-bit register for signal <rohit>.
+    Summary:
+	inferred   3 D-type flip-flop(s).
+Unit <ichip_2> synthesized.
+
+Synthesizing Unit <Counter>.
+    Related source file is "E:\spi3\Counter.v".
+    Found 4-bit register for signal <count>.
+    Found 4-bit adder for signal <count[3]_GND_2_o_add_1_OUT> created at line 38.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred   4 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <Counter> synthesized.
+
+Synthesizing Unit <ShiftReg>.
+    Related source file is "E:\spi3\ShiftReg.v".
+    Found 8-bit register for signal <dataout>.
+    Summary:
+	inferred   8 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <ShiftReg> synthesized.
+
+Synthesizing Unit <ram_flip>.
+    Related source file is "E:\spi3\ram_flip.v".
+    Found 16x8-bit single-port RAM <Mram_memory> for signal <memory>.
+    Found 1-bit register for signal <enable_clk_DFF_13>.
+    Found 1-bit register for signal <enable_clk_DFF_14>.
+    Found 1-bit register for signal <enable_clk_DFF_15>.
+    Found 1-bit register for signal <enable_clk_DFF_16>.
+    Found 1-bit register for signal <enable_clk_DFF_17>.
+    Found 1-bit register for signal <enable_clk_DFF_18>.
+    Found 1-bit register for signal <enable_clk_DFF_19>.
+    Found 1-bit register for signal <enable_clk_DFF_20>.
+    Found 8-bit register for signal <Z_4_o_dff_5_OUT>.
+    Found 1-bit tristate buffer for signal <data_out<7>> created at line 30
+    Found 1-bit tristate buffer for signal <data_out<6>> created at line 30
+    Found 1-bit tristate buffer for signal <data_out<5>> created at line 30
+    Found 1-bit tristate buffer for signal <data_out<4>> created at line 30
+    Found 1-bit tristate buffer for signal <data_out<3>> created at line 30
+    Found 1-bit tristate buffer for signal <data_out<2>> created at line 30
+    Found 1-bit tristate buffer for signal <data_out<1>> created at line 30
+    Found 1-bit tristate buffer for signal <data_out<0>> created at line 30
+    Summary:
+	inferred   1 RAM(s).
+	inferred  16 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+	inferred   8 Tristate(s).
+Unit <ram_flip> synthesized.
+
+Synthesizing Unit <dflipflop>.
+    Related source file is "E:\spi3\dflipflop.v".
+    Found 1-bit register for signal <q>.
+    Summary:
+	inferred   1 D-type flip-flop(s).
+Unit <dflipflop> synthesized.
+
+Synthesizing Unit <bit8_mux_2x1>.
+    Related source file is "E:\spi3\bit8_mux_2x1.v".
+    Summary:
+	inferred   1 Multiplexer(s).
+Unit <bit8_mux_2x1> synthesized.
+
+Synthesizing Unit <register>.
+    Related source file is "E:\spi3\register.v".
+    Found 8-bit register for signal <b>.
+    Summary:
+	inferred   8 D-type flip-flop(s).
+Unit <register> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 1
+ 16x8-bit single-port RAM                              : 1
+# Adders/Subtractors                                   : 1
+ 4-bit adder                                           : 1
+# Registers                                            : 19
+ 1-bit register                                        : 14
+ 2-bit register                                        : 1
+ 4-bit register                                        : 1
+ 8-bit register                                        : 3
+# Multiplexers                                         : 5
+ 4-bit 2-to-1 multiplexer                              : 1
+ 8-bit 2-to-1 multiplexer                              : 4
+# Tristates                                            : 8
+ 1-bit tristate buffer                                 : 8
+# Xors                                                 : 1
+ 1-bit xor2                                            : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+INFO:Xst:2261 - The FF/Latch <enable_clk_DFF_13> in Unit <memory> is equivalent to the following 7 FFs/Latches, which will be removed : <enable_clk_DFF_14> <enable_clk_DFF_15> <enable_clk_DFF_18> <enable_clk_DFF_16> <enable_clk_DFF_17> <enable_clk_DFF_19> <enable_clk_DFF_20> 
+WARNING:Xst:2677 - Node <b_5> of sequential type is unconnected in block <adderess>.
+WARNING:Xst:2677 - Node <b_6> of sequential type is unconnected in block <adderess>.
+WARNING:Xst:2677 - Node <b_7> of sequential type is unconnected in block <adderess>.
+
+Synthesizing (advanced) Unit <Counter>.
+The following registers are absorbed into counter <count>: 1 register on signal <count>.
+Unit <Counter> synthesized (advanced).
+
+Synthesizing (advanced) Unit <ram_flip>.
+INFO:Xst:3231 - The small RAM <Mram_memory> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 16-word x 8-bit                     |          |
+    |     clkA           | connected to signal <clk>           | rise     |
+    |     weA            | connected to signal <read_0>        | low      |
+    |     addrA          | connected to signal <adrs>          |          |
+    |     diA            | connected to signal <data_in>       |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+Unit <ram_flip> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 1
+ 16x8-bit single-port distributed RAM                  : 1
+# Counters                                             : 1
+ 4-bit up counter                                      : 1
+# Registers                                            : 40
+ Flip-Flops                                            : 40
+# Multiplexers                                         : 11
+ 1-bit 2-to-1 multiplexer                              : 8
+ 8-bit 2-to-1 multiplexer                              : 3
+# Xors                                                 : 1
+ 1-bit xor2                                            : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+INFO:Xst:2261 - The FF/Latch <enable_clk_DFF_13> in Unit <ram_flip> is equivalent to the following 7 FFs/Latches, which will be removed : <enable_clk_DFF_14> <enable_clk_DFF_15> <enable_clk_DFF_18> <enable_clk_DFF_16> <enable_clk_DFF_17> <enable_clk_DFF_19> <enable_clk_DFF_20> 
+INFO:Xst:2261 - The FF/Latch <b_5> in Unit <register> is equivalent to the following 2 FFs/Latches, which will be removed : <b_6> <b_7> 
+WARNING:Xst:1710 - FF/Latch <b_5> (without init value) has a constant value of 0 in block <register>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2042 - Unit ram_flip: 8 internal tristates are replaced by logic (pull-up yes): data_out<0>, data_out<1>, data_out<2>, data_out<3>, data_out<4>, data_out<5>, data_out<6>, data_out<7>.
+
+Optimizing unit <ichip_2> ...
+
+Optimizing unit <ShiftReg> ...
+
+Optimizing unit <ram_flip> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block ichip_2, actual ratio is 0.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 34
+ Flip-Flops                                            : 34
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : ichip_2.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 41
+#      GND                         : 1
+#      INV                         : 3
+#      LUT2                        : 12
+#      LUT3                        : 1
+#      LUT4                        : 2
+#      LUT5                        : 6
+#      LUT6                        : 16
+# FlipFlops/Latches                : 34
+#      FD                          : 11
+#      FDC                         : 22
+#      FDP                         : 1
+# RAMS                             : 8
+#      RAM32X1S                    : 8
+# Clock Buffers                    : 2
+#      BUFG                        : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 6
+#      IBUF                        : 3
+#      OBUF                        : 3
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 7a100tcsg324-1 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:              33  out of  126800     0%  
+ Number of Slice LUTs:                   48  out of  63400     0%  
+    Number used as Logic:                40  out of  63400     0%  
+    Number used as Memory:                8  out of  19000     0%  
+       Number used as RAM:                8
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:     52
+   Number with an unused Flip Flop:      19  out of     52    36%  
+   Number with an unused LUT:             4  out of     52     7%  
+   Number of fully used LUT-FF pairs:    29  out of     52    55%  
+   Number of unique control sets:         4
+
+IO Utilization: 
+ Number of IOs:                           7
+ Number of bonded IOBs:                   7  out of    210     3%  
+    IOB Flip Flops/Latches:               1
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                2  out of     32     6%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 36    |
+sck                                | IBUF+BUFG              | 6     |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -1
+
+   Minimum period: 2.152ns (Maximum Frequency: 464.684MHz)
+   Minimum input arrival time before clock: 1.575ns
+   Maximum output required time after clock: 0.897ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 2.152ns (frequency: 464.684MHz)
+  Total number of paths / destination ports: 215 / 75
+-------------------------------------------------------------------------
+Delay:               2.152ns (Levels of Logic = 1)
+  Source:            d2/q (FF)
+  Destination:       memory/Mram_memory8 (RAM)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: d2/q to memory/Mram_memory8
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q             11   0.478   0.602  d2/q (d2/q)
+     LUT4:I2->O            8   0.124   0.445  memory/write_ctrl (memory/write_ctrl)
+     RAM32X1S:WE               0.503          memory/Mram_memory2
+    ----------------------------------------
+    Total                      2.152ns (1.105ns logic, 1.047ns route)
+                                       (51.3% logic, 48.7% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'sck'
+  Clock period: 1.520ns (frequency: 657.895MHz)
+  Total number of paths / destination ports: 12 / 5
+-------------------------------------------------------------------------
+Delay:               1.520ns (Levels of Logic = 1)
+  Source:            shift_count/count_3 (FF)
+  Destination:       shift_count/count_3 (FF)
+  Source Clock:      sck rising
+  Destination Clock: sck rising
+
+  Data Path: shift_count/count_3 to shift_count/count_3
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q             18   0.478   0.888  shift_count/count_3 (shift_count/count_3)
+     LUT4:I0->O            1   0.124   0.000  shift_count/Mcount_count_xor<3>11 (shift_count/Mcount_count3)
+     FDC:D                     0.030          shift_count/count_3
+    ----------------------------------------
+    Total                      1.520ns (0.632ns logic, 0.888ns route)
+                                       (41.6% logic, 58.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 17 / 17
+-------------------------------------------------------------------------
+Offset:              1.575ns (Levels of Logic = 2)
+  Source:            enable (PAD)
+  Destination:       d3/q (FF)
+  Destination Clock: clk rising
+
+  Data Path: enable to d3/q
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   0.001   0.399  enable_IBUF (enable_IBUF)
+     INV:I->O             22   0.146   0.535  adderess/reset_inv1_INV_0 (adderess/reset_inv)
+     FDC:CLR                   0.494          adderess/b_0
+    ----------------------------------------
+    Total                      1.575ns (0.641ns logic, 0.934ns route)
+                                       (40.7% logic, 59.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'sck'
+  Total number of paths / destination ports: 7 / 7
+-------------------------------------------------------------------------
+Offset:              1.575ns (Levels of Logic = 2)
+  Source:            enable (PAD)
+  Destination:       command (FF)
+  Destination Clock: sck rising
+
+  Data Path: enable to command
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   0.001   0.399  enable_IBUF (enable_IBUF)
+     INV:I->O             22   0.146   0.535  adderess/reset_inv1_INV_0 (adderess/reset_inv)
+     FDC:CLR                   0.494          for_mosi/q
+    ----------------------------------------
+    Total                      1.575ns (0.641ns logic, 0.934ns route)
+                                       (40.7% logic, 59.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 2 / 2
+-------------------------------------------------------------------------
+Offset:              0.897ns (Levels of Logic = 1)
+  Source:            looping_reg/dataout_0 (FF)
+  Destination:       miso (PAD)
+  Source Clock:      clk rising
+
+  Data Path: looping_reg/dataout_0 to miso
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              4   0.478   0.419  looping_reg/dataout_0 (looping_reg/dataout_0)
+     OBUF:I->O                 0.000          miso_OBUF (miso)
+    ----------------------------------------
+    Total                      0.897ns (0.478ns logic, 0.419ns route)
+                                       (53.3% logic, 46.7% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'sck'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              0.891ns (Levels of Logic = 1)
+  Source:            shift_count/count_2 (FF)
+  Destination:       dd (PAD)
+  Source Clock:      sck rising
+
+  Data Path: shift_count/count_2 to dd
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              3   0.478   0.413  shift_count/count_2 (shift_count/count_2)
+     OBUF:I->O                 0.000          dd_OBUF (dd)
+    ----------------------------------------
+    Total                      0.891ns (0.478ns logic, 0.413ns route)
+                                       (53.6% logic, 46.4% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |    2.152|         |         |         |
+sck            |    2.432|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock sck
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+sck            |    1.520|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 16.00 secs
+Total CPU time to Xst completion: 16.01 secs
+ 
+--> 
+
+Total memory usage is 409284 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    8 (   0 filtered)
+Number of infos    :    4 (   0 filtered)
+

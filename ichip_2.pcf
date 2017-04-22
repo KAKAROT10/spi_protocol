@@ -1,0 +1,16 @@
+//! **************************************************************************
+// Written by: Map P.20131013 on Sun Apr 09 16:03:52 2017
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "clk" LOCATE = SITE "E3" LEVEL 1;
+COMP "enable" LOCATE = SITE "B13" LEVEL 1;
+COMP "miso" LOCATE = SITE "C17" LEVEL 1;
+COMP "mosi" LOCATE = SITE "D17" LEVEL 1;
+COMP "done" LOCATE = SITE "G13" LEVEL 1;
+COMP "sck" LOCATE = SITE "E17" LEVEL 1;
+PIN sck_pin<0> = BEL "sck" PINNAME PAD;
+PIN "sck_pin<0>" CLOCK_DEDICATED_ROUTE = FALSE;
+COMP "dd" LOCATE = SITE "H17" LEVEL 1;
+SCHEMATIC END;
+

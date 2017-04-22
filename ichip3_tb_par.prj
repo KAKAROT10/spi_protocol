@@ -1,0 +1,2 @@
+verilog work "netgen/par/ichip_2_timesim.v"
+verilog work "ichip3_tb.v"

@@ -1,0 +1,24 @@
+
+
+NET "done" IOSTANDARD = LVCMOS33;
+NET "miso" IOSTANDARD = LVCMOS33;
+NET "enable" IOSTANDARD = LVCMOS33;
+NET "mosi" IOSTANDARD = LVCMOS33;
+NET "clk" IOSTANDARD = LVCMOS33;
+NET "sck" IOSTANDARD = LVCMOS33;
+NET "sck" CLOCK_DEDICATED_ROUTE = FALSE;
+
+NET "clk" LOC = E3;
+NET "enable" LOC = B13;
+NET "miso" LOC = C17;
+NET "mosi" LOC = D17;
+NET "sck" LOC = E17;
+NET "done" LOC = G13;
+
+# PlanAhead Generated IO constraints 
+
+NET "dd" IOSTANDARD = LVCMOS33;
+
+# PlanAhead Generated physical constraints 
+
+NET "dd" LOC = H17;

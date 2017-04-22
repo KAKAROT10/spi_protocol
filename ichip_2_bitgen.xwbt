@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=E:\spi2\ichip_2.ncd
+OUTFILE=E:\spi2\ichip_2.bit
+FAMILY=Artix7
+PART=xc7a100t-3csg324
+WORKINGDIR=E:\spi2
+LICENSE=WebPack
+USER_INFO=__0_0_0

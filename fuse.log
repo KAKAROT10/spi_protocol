@@ -1,0 +1,31 @@
+Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib simprims_ver -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -lib secureip -o E:/spi3/ichip3_tb_isim_par.exe -prj E:/spi3/ichip3_tb_par.prj work.ichip3_tb work.glbl 
+ISim P.20131013 (signature 0x7708f090)
+Number of CPUs detected in this system: 4
+Turning on mult-threading, number of parallel sub-compilation jobs: 8 
+Determining compilation order of HDL files
+Analyzing Verilog file "E:/spi3/netgen/par/ichip_2_timesim.v" into library work
+Analyzing Verilog file "E:/spi3/ichip3_tb.v" into library work
+Starting static elaboration
+WARNING:HDLCompiler:1016 - "E:/spi3/ichip3_tb.v" Line 38: Port dd is not connected to this instance
+Completed static elaboration
+Compiling module X_BUF
+Compiling module X_LUT6(INIT=64'b1111111111111111...
+Compiling module X_LUT5(INIT=32'b1111000011111111...
+Compiling module ffsrce
+Compiling module X_FF
+Compiling module X_OPAD
+Compiling module X_OBUF
+Compiling module X_IPAD
+Compiling module X_CKBUF
+Compiling module X_FF(INIT=1'b1)
+Compiling module X_RAMD32
+Compiling module X_ONE
+Compiling module X_ZERO
+Compiling module ichip_2
+Compiling module ichip3_tb
+Compiling module glbl
+Time Resolution for simulation is 1ps.
+Compiled 79 Verilog Units
+Built simulation executable E:/spi3/ichip3_tb_isim_par.exe
+Fuse Memory Usage: 31876 KB
+Fuse CPU Usage: 1109 ms

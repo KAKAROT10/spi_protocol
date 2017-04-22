@@ -1,0 +1,7 @@
+verilog work "ShiftReg.v"
+verilog work "register.v"
+verilog work "ram_flip.v"
+verilog work "dflipflop.v"
+verilog work "Counter.v"
+verilog work "bit8_mux_2x1.v"
+verilog work "ichip_2_3.v"
